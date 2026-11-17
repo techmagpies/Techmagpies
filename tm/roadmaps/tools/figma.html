@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figma Roadmap — TechMagpies</title>
+
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tm-chrome.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  /* Git Brand Palette */
+  --git-primary:   #F05032;
+  --git-bright:    #E8432D;
+  --git-deep:      #B83525;
+  --git-glow:      #FF7A5C;
+  --git-soft:      #FFBCAD;
+  --git-accent:    #FF9980;
+
+  /* Backgrounds — warm-dark coals */
+  --bg-dark:       #080200;
+  --bg-card:       #0e0400;
+  --bg-course:     #0b0300;
+
+  /* Borders & text */
+  --border:        #2a0e06;
+  --text-muted:    #8a5a50;
+  --text-sub:      #b07868;
+
+  /* Navbar / Footer */
+  --nav-bg:        #1a1010;
+  --nav-border:    #2e1810;
+  --footer-bg:     #0d0605;
+  --footer-border: #1e0e08;
+}
+
+body{
+  font-family:"Segoe UI",sans-serif;
+  background:var(--bg-dark);
+  color:#f0e4e0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  width:100%;position:sticky;top:0;z-index:1000;
+  background:var(--nav-bg);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--nav-border);
+}
+.nav-container{
+  max-width:1200px;margin:auto;padding:16px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-left{
+  display:flex;align-items:center;gap:10px;
+  font-weight:600;font-size:18px;color:#f0e4e0;
+}
+.nav-left svg{width:22px;height:22px;color:#F05032;}
+.nav-center{display:flex;gap:30px;list-style:none;}
+.nav-center a{
+  text-decoration:none;color:#c09080;font-size:15px;
+  transition:0.3s;position:relative;
+}
+.nav-center a::after{
+  content:"";position:absolute;bottom:-5px;left:0;
+  width:0%;height:2px;
+  background:linear-gradient(90deg,#F05032,#FF9980);
+  transition:0.3s;
+}
+.nav-center a:hover{color:#f0e4e0;}
+.nav-center a:hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:15px;}
+#userName{font-size:14px;color:#c09080;}
+.login-btn{
+  padding:8px 22px;border-radius:8px;text-decoration:none;
+  font-size:14px;font-weight:600;color:white;
+  background:linear-gradient(90deg,#F05032,#FF7A5C);
+  transition:0.3s;
+}
+.login-btn:hover{box-shadow:0 5px 20px rgba(240,80,50,0.45);}
+.menu-toggle{display:none;font-size:22px;cursor:pointer;color:#f0e4e0;margin-left:10px;}
+
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .nav-center{
+    position:absolute;top:70px;left:0;width:100%;
+    background:var(--nav-bg);display:none;flex-direction:column;
+    align-items:center;gap:20px;padding:20px 0;
+    border-bottom:1px solid var(--nav-border);
+  }
+  .nav-center.active{display:flex;}
+  .nav-container{padding:14px 20px;}
+}
+
+/* ===== HERO ===== */
+.hero{
+  display:flex;justify-content:space-between;
+  padding:60px 80px;
+  background:linear-gradient(135deg,#080200,#150804,#080200);
+  color:#f0e4e0;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(240,80,50,0.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,122,92,0.07) 1px,transparent 1px);
+  background-size:40px 40px;z-index:0;
+}
+/* Git logo watermark */
+.hero::after{
+  content:"";
+  position:absolute;right:40px;top:50%;transform:translateY(-50%);
+  width:240px;height:240px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 92'%3E%3Cpath fill='%23F05032' opacity='0.06' d='M90.156 41.965L50.036 1.848a5.913 5.913 0 0 0-8.368 0l-8.332 8.332 10.566 10.566a7.03 7.03 0 0 1 7.23 1.684 7.043 7.043 0 0 1 1.673 7.266l10.183 10.184a7.026 7.026 0 0 1 7.268 1.672 7.044 7.044 0 0 1 0 9.957 7.044 7.044 0 0 1-9.961 0 7.043 7.043 0 0 1-1.532-7.673L50.025 33.61v24.88a7.044 7.044 0 0 1 1.86 11.35 7.044 7.044 0 0 1-9.961 0 7.044 7.044 0 0 1 0-9.957 7.06 7.06 0 0 1 2.304-1.539V33.506a7.049 7.049 0 0 1-2.304-1.535 7.057 7.057 0 0 1-1.54-7.695L29.916 13.812 1.856 41.872a5.918 5.918 0 0 0 0 8.37l40.12 40.118a5.913 5.913 0 0 0 8.368 0l39.812-39.81a5.924 5.924 0 0 0 0-8.585'/%3E%3C/svg%3E") center/contain no-repeat;
+  z-index:0;opacity:1;
+}
+.hero-left{max-width:600px;z-index:1;}
+.tag{font-size:13px;opacity:0.8;margin-bottom:10px;letter-spacing:1px;}
+.hero h1{font-size:40px;margin-bottom:15px;}
+.hero p{line-height:1.6;opacity:0.9;color:#d0b8b0;}
+.badges{display:flex;gap:12px;margin-top:20px;align-items:center;flex-wrap:wrap;}
+.badge{padding:8px 14px;border-radius:20px;font-size:14px;}
+.cert{background:rgba(255,255,255,0.10);}
+.rating{background:var(--git-primary);color:#fff;font-weight:600;}
+.reviews{color:#c09080;text-decoration:underline;cursor:pointer;}
+
+.hero-card{
+  background:#0e0400;padding:25px;border-radius:16px;width:300px;z-index:1;
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+  border:1px solid rgba(240,80,50,0.2);
+}
+.stats{display:flex;justify-content:space-between;margin-bottom:20px;text-align:center;}
+.stat{flex:1;}
+.stat:not(:last-child){border-right:1px solid rgba(255,255,255,0.07);}
+.stat h3{margin:5px 0;font-size:15px;}
+.btn{
+  width:100%;padding:12px;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  border:none;border-radius:10px;color:white;font-weight:600;cursor:pointer;
+  margin-top:10px;transition:0.3s;
+}
+.btn:hover{box-shadow:0 6px 20px rgba(240,80,50,0.45);transform:translateY(-1px);}
+.enrolled{text-align:center;margin-top:10px;font-size:13px;opacity:0.8;}
+
+@media(max-width:900px){.hero{flex-direction:column;gap:30px;}}
+@media(max-width:768px){
+  .hero{padding:40px 20px;}
+  .hero h1{font-size:28px;}
+  .hero p{font-size:14px;}
+  .hero-card{width:100%;}
+  .hero::after{display:none;}
+}
+@media(max-width:480px){
+  .hero{padding:30px 15px;}
+  .hero h1{font-size:24px;}
+  .badge{font-size:12px;padding:6px 10px;}
+}
+
+/* ===== MAIN LAYOUT ===== */
+.container{display:flex;gap:30px;padding:40px 60px;}
+.left{flex:3;}
+.right{flex:1;}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--bg-card);border-radius:16px;padding:25px;
+  margin-bottom:25px;border:1px solid var(--border);
+}
+.level{display:flex;gap:16px;}
+.level-badge{
+  width:48px;height:48px;
+  background:linear-gradient(135deg,var(--git-primary),var(--git-accent));
+  border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:18px;flex-shrink:0;color:white;
+}
+.subtext{color:var(--text-sub);font-size:14px;}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding-left:70px;margin-top:25px;}
+.timeline::before{
+  content:"";position:absolute;left:34px;top:0;
+  width:2px;height:100%;
+  background:linear-gradient(180deg,var(--git-primary),#2a0e06);
+}
+
+/* ===== COURSE ===== */
+.course{
+  background:var(--bg-course);border-radius:14px;
+  border:1px solid var(--border);margin-bottom:25px;position:relative;
+}
+.course::before{
+  content:"";position:absolute;left:-36px;top:24px;
+  width:12px;height:12px;
+  background:var(--git-primary);border-radius:50%;
+  box-shadow:0 0 10px rgba(240,80,50,0.7);
+}
+.course-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 20px;border-bottom:1px solid var(--border);
+}
+.course-title{font-weight:600;color:var(--git-glow);}
+.course-sub{font-size:14px;color:var(--text-sub);margin-top:4px;}
+.course-btn{
+  width:140px;height:40px;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  border:none;border-radius:10px;color:white;font-weight:600;cursor:pointer;
+  transition:0.25s;flex-shrink:0;
+}
+.course-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(240,80,50,0.35);}
+.list{padding:15px 25px;}
+.list div{
+  margin:10px 0;padding-left:18px;position:relative;color:#d0b8b0;
+}
+.list div::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:7px;height:7px;background:var(--git-primary);border-radius:50%;
+}
+
+/* ===== RIGHT PANEL ===== */
+.pro-box{
+  background:var(--bg-card);
+  border:1px solid rgba(240,80,50,0.25);
+  padding:25px;border-radius:16px;position:sticky;top:90px;
+}
+.pro-box h3{font-size:16px;margin-bottom:8px;}
+.price{font-size:28px;font-weight:bold;color:var(--git-primary);margin:4px 0;}
+.old{text-decoration:line-through;color:#4a2010;font-size:14px;}
+.pro-box ul{padding-left:18px;margin:14px 0;color:var(--text-sub);font-size:14px;line-height:2;}
+.pro-box button{
+  width:100%;padding:12px;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  border:none;border-radius:8px;color:white;font-weight:600;cursor:pointer;
+  margin-top:10px;transition:0.3s;
+}
+.pro-box button:hover{box-shadow:0 5px 20px rgba(240,80,50,0.4);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){.container{flex-direction:column;padding:30px 20px;}}
+@media(max-width:768px){
+  .course-header{flex-direction:column;align-items:flex-start;gap:10px;}
+  .course-btn{width:100%;}
+  .timeline{padding-left:30px;}
+  .timeline::before{left:12px;}
+  .course::before{left:-20px;}
+}
+@media(max-width:480px){.container{padding:20px 15px;}}
+
+/* ===== PROJECTS ===== */
+.projects-section{margin:80px 60px;}
+.projects-section h2{
+  font-size:28px;margin-bottom:10px;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  -webkit-background-clip:text;color:transparent;
+}
+.projects-section .sub{color:var(--text-sub);margin-bottom:30px;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.project-card{
+  background:rgba(240,80,50,0.04);
+  border:1px solid rgba(240,80,50,0.15);
+  padding:20px;border-radius:16px;
+  backdrop-filter:blur(10px);transition:0.35s;
+  position:relative;overflow:hidden;
+}
+.project-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,transparent,rgba(240,80,50,0.10),transparent);
+  opacity:0;transition:0.4s;
+}
+.project-card:hover::before{opacity:1;}
+.project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 10px 30px rgba(240,80,50,0.2);}
+.project-card h3{color:var(--git-glow);margin-bottom:10px;}
+.project-card p{font-size:14px;color:#d0b8b0;}
+.project-tag{
+  display:inline-block;margin-top:10px;font-size:11px;
+  padding:3px 8px;border-radius:20px;
+  background:rgba(240,80,50,0.12);color:var(--git-primary);
+  border:1px solid rgba(240,80,50,0.3);
+}
+
+@media(max-width:768px){.projects-section{margin:60px 20px;}.projects-grid{grid-template-columns:1fr;}}
+
+/* ===== MENTOR ===== */
+.mentor-section{margin:80px 60px;text-align:center;}
+.mentor-section h2{
+  font-size:28px;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  -webkit-background-clip:text;color:transparent;
+}
+.mentor-section .sub{color:var(--text-sub);margin:10px 0 40px;}
+.mentor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+.mentor-card{
+  background:rgba(240,80,50,0.04);
+  border:1px solid rgba(240,80,50,0.15);
+  border-radius:18px;padding:30px 20px;
+  backdrop-filter:blur(12px);transition:0.4s;
+  position:relative;overflow:hidden;
+}
+.mentor-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,transparent,rgba(240,80,50,0.08),transparent);
+  opacity:0;transition:0.4s;
+}
+.mentor-card:hover::before{opacity:1;}
+.mentor-card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 15px 40px rgba(240,80,50,0.18);}
+.icon{font-size:30px;margin-bottom:15px;color:var(--git-primary);}
+.mentor-card h3{margin-bottom:10px;color:#f0e4e0;}
+.mentor-card p{font-size:14px;color:var(--text-sub);margin-bottom:20px;}
+.mentor-card button{
+  padding:10px 20px;border-radius:8px;border:none;
+  background:linear-gradient(90deg,var(--git-primary),var(--git-accent));
+  color:white;cursor:pointer;font-weight:600;transition:0.3s;
+}
+.mentor-card button:hover{box-shadow:0 5px 20px rgba(240,80,50,0.4);}
+
+@media(max-width:768px){.mentor-section{margin:60px 20px;}.mentor-grid{grid-template-columns:1fr;}}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:var(--footer-bg);margin-top:80px;
+  padding:60px 40px 20px;border-top:1px solid var(--footer-border);
+}
+.footer-container{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;max-width:1200px;margin:auto;
+}
+.footer-logo-wrap{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.footer-logo-wrap svg{width:20px;height:20px;color:#F05032;}
+.footer-logo-name{font-size:18px;font-weight:600;color:#f0e4e0;}
+.footer-col p{color:#8a5a50;font-size:14px;line-height:1.7;}
+.footer-col h4{margin-bottom:15px;color:#f0e4e0;font-size:15px;font-weight:600;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin:10px 0;}
+.footer-col ul li a{color:#8a5a50;text-decoration:none;font-size:14px;transition:0.3s;}
+.footer-col ul li a:hover{color:#F05032;}
+.contact-item{
+  display:flex;align-items:flex-start;gap:9px;
+  margin:10px 0;color:#8a5a50;font-size:14px;line-height:1.5;
+}
+.contact-item svg{width:15px;height:15px;color:#F05032;flex-shrink:0;margin-top:2px;}
+.socials{display:flex;gap:12px;margin-top:6px;}
+.socials a{
+  width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+  border-radius:10px;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.07);transition:0.3s;
+}
+.socials a:hover{background:linear-gradient(135deg,#F05032,#FF9980);border-color:transparent;}
+.socials svg{width:17px;height:17px;color:#8a5a50;}
+.socials a:hover svg{color:white;}
+.footer-bottom{
+  text-align:center;margin-top:40px;
+  border-top:1px solid rgba(255,255,255,0.04);
+  padding-top:18px;font-size:13px;color:#4a2010;
+}
+@media(max-width:768px){
+  .footer-container{grid-template-columns:1fr;text-align:center;}
+  .socials{justify-content:center;}
+  .contact-item{justify-content:center;}
+}
+</style>
+<link rel="stylesheet" href="../../assets/css/roadmap.css">
+<link rel="stylesheet" href="text-contrast.css">
+</head>
+
+<body data-page="courses" data-base="../../" data-nav="dark">
+<script src="../../assets/js/tm.js"></script>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="tag">🎨 FIGMA TOOL</div>
+    <h1>Figma Practical Roadmap</h1>
+    <p>
+      Master Figma as a professional UI/UX design tool. Learn interface design,
+      components, prototyping, design systems, and real-world collaboration used
+      by designers and product teams.
+    </p>
+
+    <div class="badges">
+      <div class="badge cert">🎓 Certification Available</div>
+      <div class="badge rating">⭐ 4.9 (80k+)</div>
+      <div class="reviews">80k+ Reviews</div>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="stats">
+      <div class="stat"><div>🎨</div><h3>5 Modules</h3></div>
+      <div class="stat"><div>🕒</div><h3>1–2 Months</h3></div>
+      <div class="stat"><div>⚡</div><h3>400 Tasks</h3></div>
+    </div>
+    <button class="btn">Start Learning</button>
+    <div class="enrolled">👥 280k+ learners</div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="container">
+<div class="left">
+
+<!-- LEVEL 1 -->
+<div class="card">
+<div class="level">
+<div class="level-badge">1</div>
+<div>
+<p class="subtext">LEVEL 1</p>
+<h3>Figma Basics & UI Design</h3>
+<p class="subtext">Design • Layout • Components • 2 modules • 3 weeks</p>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="course">
+<div class="course-header">
+<div>
+<div class="course-title">Figma Interface & Design Basics</div>
+<div class="course-sub">Hands-on • 120 Tasks</div>
+</div>
+<button class="course-btn">Start</button>
+</div>
+
+<div class="list">
+<div>Figma interface overview</div>
+<div>Frames, layers & groups</div>
+<div>Shapes, text & colors</div>
+<div>Auto layout basics</div>
+<div>Designing simple UI screens</div>
+</div>
+</div>
+
+<div class="course">
+<div class="course-header">
+<div>
+<div class="course-title">Components & Reusable Design</div>
+<div class="course-sub">Hands-on • 100 Tasks</div>
+</div>
+<button class="course-btn">Start</button>
+</div>
+
+<div class="list">
+<div>Create components</div>
+<div>Variants & states</div>
+<div>Design consistency</div>
+<div>Reusable UI elements</div>
+<div>Assets & libraries</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- LEVEL 2 -->
+<div class="card">
+<div class="level">
+<div class="level-badge">2</div>
+<div>
+<p class="subtext">LEVEL 2</p>
+<h3>Prototyping, Systems & Collaboration</h3>
+<p class="subtext">Prototype • UX • Teamwork • 3 modules • 5 weeks</p>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="course">
+<div class="course-header">
+<div>
+<div class="course-title">Prototyping & User Flow</div>
+<div class="course-sub">Hands-on • 80 Tasks</div>
+</div>
+<button class="course-btn">Start</button>
+</div>
+
+<div class="list">
+<div>Create interactive prototypes</div>
+<div>Transitions & animations</div>
+<div>User flows & navigation</div>
+<div>Mobile & web prototyping</div>
+<div>Usability testing basics</div>
+</div>
+</div>
+
+<div class="course">
+<div class="course-header">
+<div>
+<div class="course-title">Design Systems</div>
+<div class="course-sub">Hands-on • 60 Tasks</div>
+</div>
+<button class="course-btn">Start</button>
+</div>
+
+<div class="list">
+<div>Typography systems</div>
+<div>Color systems</div>
+<div>Spacing & layout rules</div>
+<div>Design tokens</div>
+<div>Building scalable UI systems</div>
+</div>
+</div>
+
+<div class="course">
+<div class="course-header">
+<div>
+<div class="course-title">Team Collaboration & Handoff</div>
+<div class="course-sub">Hands-on • 40 Tasks</div>
+</div>
+<button class="course-btn">Start</button>
+</div>
+
+<div class="list">
+<div>Sharing designs</div>
+<div>Comments & feedback</div>
+<div>Version history</div>
+<div>Developer handoff</div>
+<div>Exporting assets</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+<div class="pro-box">
+<h3>TechMagpies 🎨 Pro</h3>
+<p class="old">₹2999</p>
+<p class="price">₹1999</p>
+<ul>
+<li>Complete Figma training</li>
+<li>UI/UX design mastery</li>
+<li>Hands-on projects</li>
+<li>Certificate</li>
+<li>Lifetime access</li>
+</ul>
+<button>Get Pro</button>
+</div>
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+<div class="projects-section">
+<h2>🎨 Figma Tool Projects</h2>
+<p class="sub">Real UI/UX design practice</p>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<h3>Portfolio UI Design</h3>
+<p>Design your personal website</p>
+</div>
+
+<div class="project-card">
+<h3>Mobile App UI</h3>
+<p>Create app interface design</p>
+</div>
+
+<div class="project-card">
+<h3>Landing Page Design</h3>
+<p>Modern web design</p>
+</div>
+
+<div class="project-card">
+<h3>Design System Kit</h3>
+<p>Reusable UI components</p>
+</div>
+
+<div class="project-card">
+<h3>Interactive Prototype</h3>
+<p>User flow simulation</p>
+</div>
+
+<div class="project-card">
+<h3>Redesign Popular App</h3>
+<p>Improve existing UI</p>
+</div>
+
+</div>
+</div>
+
+<!-- MENTOR -->
+<div class="mentor-section">
+<h2>Boost Your Learning</h2>
+<p class="sub">Become UI/UX designer ready</p>
+
+<div class="mentor-grid">
+
+<div class="mentor-card">
+<h3>Mentor Guidance</h3>
+<p>Improve your designs</p>
+<button type="button" data-mentor>Get Help</button>
+</div>
+
+<div class="mentor-card">
+<h3>Portfolio Review</h3>
+<p>Make strong design portfolio</p>
+<button>Review</button>
+</div>
+
+<div class="mentor-card">
+<h3>Career Prep</h3>
+<p>UI/UX interview prep</p>
+<button>Start</button>
+</div>
+
+</div>
+</div>
+<div id="tm-footer"></div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courses — TechMagpies</title>
+  <meta name="description" content="Browse 60+ TechMagpies roadmaps across CSE, AI/ML, ECE, EEE and developer tools. Filter by track and length, then start learning.">
+  <meta name="theme-color" content="#0b1a3e">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tm-chrome.css">
+  <link rel="stylesheet" href="assets/css/tm.css">
+  <link rel="stylesheet" href="assets/css/featured.css">
+  <link rel="stylesheet" href="assets/css/courses.css">
+</head>
+<body data-page="courses" data-base="" data-nav="light">
+<script src="assets/js/tm.js"></script>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <header class="chero">
+    <div class="container chero__grid">
+      <div class="chero__copy">
+        <span class="chero__pill"><span class="pulse"></span>60+ roadmaps · built around real projects</span>
+        <h1>Learn the skills employers hire for.</h1>
+        <p class="chero__lead">Career-focused roadmaps that take you from your first lesson to a project you can show. Pick a track, follow the steps, and build as you learn.</p>
+        <div class="chero__cta">
+          <a class="btn btn--glow" href="#featured">Explore Courses <span data-i="arrow-right" data-s="18"></span></a>
+          <a class="btn btn--onDark" href="#catalog">Browse all roadmaps</a>
+        </div>
+        <ul class="chero__facts" aria-label="What you get">
+          <li><b>5</b><span>learning tracks</span></li>
+          <li><b>1:1</b><span>mentor support</span></li>
+          <li><b>100%</b><span>self-paced</span></li>
+        </ul>
+      </div>
+      <div class="chero__art" aria-hidden="true">
+        <ol class="route">
+          <li class="route__step"><span class="route__ic" data-i="book" data-s="22"></span><div><b>Learn the basics</b><small>Short, structured lessons</small></div></li>
+          <li class="route__step"><span class="route__ic" data-i="code" data-s="22"></span><div><b>Practise every week</b><small>Problems and challenges</small></div></li>
+          <li class="route__step"><span class="route__ic" data-i="layers" data-s="22"></span><div><b>Build a real project</b><small>Something you can show</small></div></li>
+          <li class="route__step route__step--end"><span class="route__ic" data-i="award" data-s="22"></span><div><b>Become job-ready</b><small>Certificate and mentor review</small></div></li>
+        </ol>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- ============ SEARCH ============ -->
+  <section class="catsearch" id="catalog" aria-label="Find a roadmap">
+    <div class="container catsearch__in">
+      <div>
+        <h2>Find your roadmap.</h2>
+        <p>Structured learning paths across CSE, AI/ML, ECE, EEE and the tools every engineer uses.</p>
+      </div>
+      <form class="search" role="search" onsubmit="return false">
+        <span data-i="search" data-s="22"></span>
+        <label class="sr-only" for="q">Search courses</label>
+        <input id="q" type="search" placeholder="Search Python, VLSI, Docker…" autocomplete="off" spellcheck="false">
+        <kbd title="Press / to search">/</kbd>
+        <button type="button" class="search__clear" id="qClear" aria-label="Clear search" hidden><span data-i="x" data-s="18"></span></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CATALOG ============ -->
+  <div class="container cat">
+    <aside class="side" aria-label="Filters">
+      <div class="side__group">
+        <h2 class="side__h">Track</h2>
+        <div class="side__list" id="fTrack" role="group" aria-label="Track"></div>
+      </div>
+      <div class="side__group">
+        <h2 class="side__h">Length</h2>
+        <div class="side__list" id="fLen" role="group" aria-label="Length"></div>
+      </div>
+      <div class="side__help">
+        <span data-i="message" data-s="20"></span>
+        <p>Not sure which track fits? <button type="button" class="linkbtn" data-mentor>Ask a mentor</button></p>
+      </div>
+    </aside>
+
+    <section class="results" aria-label="Results">
+      <div class="bar">
+        <p class="bar__count" id="count" aria-live="polite"></p>
+        <div class="bar__tools">
+          <label class="sel"><span class="sr-only">Sort by</span>
+            <select id="sort">
+              <option value="rec">Recommended</option>
+              <option value="az">A to Z</option>
+              <option value="short">Shortest first</option>
+              <option value="long">Longest first</option>
+            </select>
+            <span data-i="chevron-down" data-s="16"></span>
+          </label>
+          <div class="view" role="group" aria-label="Layout">
+            <button type="button" id="vGrid" aria-pressed="true" aria-label="Grid view"><span data-i="grid" data-s="18"></span></button>
+            <button type="button" id="vList" aria-pressed="false" aria-label="List view"><span data-i="list" data-s="18"></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </div>
+
+  <section class="ask">
+    <div class="container ask__in">
+      <div>
+        <h2>Missing a topic?</h2>
+        <p>Tell us what you want to learn and we will point you to the right roadmap or add it to the queue.</p>
+      </div>
+      <a class="btn btn--glow" href="mailto:connect@techmagpies.com?subject=Roadmap%20request">Request a roadmap <span data-i="arrow-right" data-s="18"></span></a>
+    </div>
+  </section>
+</main>
+
+<div id="tm-footer"></div>
+
+<script src="assets/js/courses-data.js"></script>
+<script src="assets/js/featured-courses.js"></script>
+<script src="assets/js/courses.js"></script>
+</body>
+</html>

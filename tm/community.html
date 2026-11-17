@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community — TechMagpies</title>
+  <meta name="description" content="Learn Together. Build Together. Grow Together. Share projects, take weekly tech challenges, find teammates, meet mentors and celebrate student achievements.">
+  <meta name="theme-color" content="#0b1a3e">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tm-chrome.css">
+  <link rel="stylesheet" href="assets/css/tm.css">
+  <link rel="stylesheet" href="assets/css/community.css">
+</head>
+<body data-page="community" data-base="" data-nav="light">
+<script src="assets/js/tm.js"></script>
+
+<main id="top">
+
+  <!-- ============ OVERVIEW (hidden while a detail view is open) ============ -->
+  <div id="cMain">
+
+    <!-- Hero -->
+    <section class="c-hero">
+      <div class="container c-hero__in">
+        <div class="c-hero__copy">
+          <span class="c-eyebrow"><span data-i="users" data-s="16"></span>TechMagpies Community</span>
+          <h1>Learn Together. Build Together. <em>Grow Together.</em></h1>
+          <p class="c-hero__lead">A community for curious minds, creative builders, and future technologists.</p>
+          <div class="c-hero__cta">
+            <a class="btn c-btn-gold" href="#projects">Explore Projects <span data-i="arrow-right" data-s="18"></span></a>
+            <button class="btn c-btn-line" type="button" data-join>Join the Community</button>
+          </div>
+        </div>
+        <div class="c-hero__art" aria-hidden="true">
+          <span class="c-chip c-chip--1">Ideas</span><span class="c-chip c-chip--2">Projects</span><span class="c-chip c-chip--3">People</span><span class="c-chip c-chip--4">Opportunities</span>
+          <ul class="c-hero__list">
+            <li><span data-i="check" data-s="16"></span>Learn Skills</li>
+            <li><span data-i="check" data-s="16"></span>Build Projects</li>
+            <li><span data-i="check" data-s="16"></span>Find a Team</li>
+            <li><span data-i="check" data-s="16"></span>Get Mentored</li>
+            <li><span data-i="check" data-s="16"></span>Grow Your Career</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <p class="c-note" role="note"><span data-i="flask" data-s="18"></span><span><b>Demo content.</b> Projects, mentor sessions and teams below are sample entries. The community member cards show the supplied student profiles.</span></p>
+    </div>
+
+    <!-- Five feature cards -->
+    <section class="c-feat" aria-label="What you can do in the community">
+      <div class="container">
+        <ul class="c-feat__grid" id="cFeat"></ul>
+      </div>
+    </section>
+
+    <!-- Featured projects -->
+    <section class="c-sec" id="projects">
+      <div class="container">
+        <header class="c-head"><div><span class="c-kicker">Student Project Showcase</span><h2>Featured Projects</h2><p class="lead">See what other students are building — open a project to read the details, browse the code or try the demo.</p></div><button class="btn btn--ghost btn--sm" type="button" data-submit-project>Share your project</button></header>
+        <div class="c-grid c-grid--3" id="cProjects"></div>
+      </div>
+    </section>
+
+    <!-- Challenge of the week -->
+    <section class="c-sec c-sec--tint" id="challenge">
+      <div class="container">
+        <header class="c-head"><div><span class="c-kicker">Weekly Tech Challenges</span><h2>Challenge of the Week</h2><p class="lead">A fresh build task every week. Finish it, submit it, learn from everyone else's solution.</p></div></header>
+        <div id="cChallenge"></div>
+      </div>
+    </section>
+
+    <!-- Mentors + teams -->
+    <section class="c-sec">
+      <div class="container c-duo">
+        <div id="mentors">
+          <header class="c-head"><div><span class="c-kicker">Ask a Mentor</span><h2>Upcoming Mentor Sessions</h2><p class="lead">Live sessions with working engineers. Pick a topic, register and bring your questions.</p></div></header>
+          <div class="c-list" id="cSessions"></div>
+        </div>
+        <div id="teams">
+          <header class="c-head"><div><span class="c-kicker">Find Your Team</span><h2>Find Your Team</h2><p class="lead">Match on skills, pick a role and start building together.</p></div></header>
+          <div class="c-list" id="cTeams"></div>
+          <div class="c-post"><span data-i="rocket" data-s="26"></span><div><b>Looking for team members?</b><span>Post your idea and find the right collaborators.</span></div><button class="btn c-btn-teal btn--sm" type="button" data-post-idea>Create a Team Post</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community members -->
+    <section class="c-sec" id="achievements">
+      <div class="container">
+        <header class="c-head"><div><span class="c-kicker">Community Members</span><h2>Meet Internship Achievers</h2><p class="lead">Discover the people, ideas, and passion shaping the TechMagpies community.</p></div></header>
+        <div class="c-grid c-grid--3" id="cStories"></div>
+      </div>
+    </section>
+
+    <!-- Guidelines -->
+    <section class="c-sec c-sec--tint" id="guidelines">
+      <div class="container">
+        <header class="c-head"><div><span class="c-kicker">Be a good teammate</span><h2>Community Guidelines</h2></div></header>
+        <ol class="c-rules" id="cRules"></ol>
+      </div>
+    </section>
+    <section class="c-cta"><div class="container c-cta__in"><div><h2>Be a part of something bigger.</h2><p>Share. Learn. Collaborate. Create opportunities.</p></div><button class="btn c-btn-gold" type="button" data-join>Join the Community <span data-i="arrow-right" data-s="18"></span></button></div></section>
+  </div>
+
+  <!-- ============ DETAIL VIEW (filled by community.js) ============ -->
+  <div id="cDetail" hidden></div>
+
+</main>
+
+<div id="tm-footer"></div>
+
+<script src="assets/js/community-data.js"></script>
+<script src="assets/js/community.js"></script>
+</body>
+</html>

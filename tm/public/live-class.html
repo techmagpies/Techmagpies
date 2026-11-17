@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechMagpies Live Class</title>
+
+  <!-- LiveKit Client -->
+  <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0b1c3d;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .join-box {
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #00c2ff;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #videoContainer {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    video {
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎓 TechMagpies Live Class</h1>
+
+<div class="join-box">
+  <input id="username" placeholder="Your Name">
+  <input id="room" placeholder="Room Name">
+  <br>
+  <button onclick="joinRoom()">Join Class</button>
+</div>
+
+<div class="controls" id="controls" style="display:none;">
+  <button onclick="toggleMic()">🎤 Mic</button>
+  <button onclick="toggleCam()">📹 Camera</button>
+</div>
+
+<div id="videoContainer"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

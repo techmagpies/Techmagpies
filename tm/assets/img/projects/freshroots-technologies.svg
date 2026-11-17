@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Placeholder screenshot for Freshroots Technologies">
+  <!-- PLACEHOLDER: replace this file with a real screenshot of the Freshroots Technologies website (640x400, 8:5), then update the path in assets/js/services.js -->
+  <rect width="640" height="400" fill="#1f6ff2"/>
+  <rect x="40" y="36" width="560" height="328" rx="16" fill="#fff"/>
+  <path d="M40 52a16 16 0 0116-16h528a16 16 0 0116 16v22H40z" fill="#0b1a3e"/>
+  <circle cx="64" cy="55" r="5" fill="#ff6b6b"/><circle cx="82" cy="55" r="5" fill="#ffb020"/><circle cx="100" cy="55" r="5" fill="#3ddc97"/>
+  <rect x="64" y="96" width="300" height="22" rx="6" fill="#0b1a3e"/>
+  <rect x="64" y="130" width="220" height="10" rx="5" fill="#cfd8ea"/>
+  <rect x="64" y="150" width="180" height="10" rx="5" fill="#cfd8ea"/>
+  <rect x="64" y="180" width="92" height="30" rx="8" fill="#3ddc97"/>
+  <rect x="400" y="96" width="176" height="114" rx="12" fill="#1f6ff2" opacity=".18"/>
+  <rect x="64" y="236" width="150" height="100" rx="12" fill="#1f6ff2" opacity=".14"/>
+  <rect x="234" y="236" width="150" height="100" rx="12" fill="#1f6ff2" opacity=".14"/>
+  <rect x="404" y="236" width="172" height="100" rx="12" fill="#1f6ff2" opacity=".14"/>
+  <rect x="190" y="152" width="260" height="96" rx="14" fill="#0b1a3e" opacity=".92"/>
+  <text x="320" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">SCREENSHOT PLACEHOLDER</text>
+  <text x="320" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#9fb4dc">Freshroots Technologies</text>
+  <text x="320" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7f93bb">Replace this file with a real screenshot</text>
+</svg>

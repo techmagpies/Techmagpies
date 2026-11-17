@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechMagpies Live Class</title>
+</head>
+
+<body style="text-align:center; margin-top:40px;">
+
+  <h2>Join Live Class</h2>
+
+  <input id="username" placeholder="Enter your name" />
+  <br><br>
+
+  <button onclick="joinCall()">Join Class</button>
+
+  <div id="videos" style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:20px;"></div>
+
+  <!-- Agora SDK -->
+  <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script>
+
+<script>
+const APP_ID = "67779ef0d3064169afa3a661cd169d09"; // 🔴 paste your real app id
+
+let client;
+
+async function joinCall() {
+  const name = document.getElementById("username").value;
+
+  if (!name) {
+    alert("Enter your name");
+    return;
+  }
+
+  console.log("Joining call...");
+
+  try {
+    client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
+
+    await client.join(APP_ID, "skillsphere", null, null);
+
+    console.log("Joined channel");
+
+    const [micTrack, camTrack] = await AgoraRTC.createMicrophoneAndCameraTracks();
+
+    const player = document.createElement("div");
+    player.id = "local-player";
+    player.style.width = "300px";
+    player.style.height = "200px";
+
+    document.body.appendChild(player);
+
+    camTrack.play("local-player");
+
+    await client.publish([micTrack, camTrack]);
+
+    console.log("Published tracks");
+
+    client.on("user-published", async (user, mediaType) => {
+      await client.subscribe(user, mediaType);
+
+      const remoteDiv = document.createElement("div");
+      remoteDiv.id = user.uid;
+      remoteDiv.style.width = "300px";
+      remoteDiv.style.height = "200px";
+
+      document.body.appendChild(remoteDiv);
+
+      if (mediaType === "video") {
+        user.videoTrack.play(remoteDiv);
+      }
+
+      if (mediaType === "audio") {
+        user.audioTrack.play();
+      }
+    });
+
+  } catch (err) {
+    console.error("ERROR:", err);
+    alert("Error: " + err.message);
+  }
+}
+</script>

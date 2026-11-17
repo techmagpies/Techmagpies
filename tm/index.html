@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechMagpies — Learn tech skills, build projects, get hired</title>
+  <meta name="description" content="TechMagpies gives engineering students 60+ step-by-step roadmaps, live classes and 1:1 mentors across software, AI, electronics and electrical engineering.">
+  <meta name="theme-color" content="#0b1a3e">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tm-chrome.css">
+  <link rel="stylesheet" href="assets/css/tm.css">
+  <link rel="stylesheet" href="assets/css/featured.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body data-page="home" data-base="" data-nav="light">
+<script src="assets/js/tm.js"></script>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <a class="hero__live" href="#live" id="heroLive">
+          <span class="pulse"></span>
+          <span id="heroLiveText">Live class this week</span>
+          <span data-i="arrow-right" data-s="16"></span>
+        </a>
+        <h1 class="hero__title">Learn it.<br>Build it.<br>Get hired.</h1>
+        <p class="hero__lead">Sixty-two step-by-step roadmaps across software, AI, electronics and electrical engineering. Live classes, 1:1 mentors and a real project at every level.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="courses.html">Explore courses <span data-i="arrow-right" data-s="18"></span></a>
+          <button class="btn btn--ghost" type="button" data-mentor>Talk to a mentor</button>
+        </div>
+        <ul class="hero__facts" aria-label="What you get">
+          <li><span data-i="compass" data-s="20"></span>Roadmaps from beginner to job-ready</li>
+          <li><span data-i="users" data-s="20"></span>Mentors who answer within a day</li>
+          <li><span data-i="award" data-s="20"></span>Certificate on completion</li>
+        </ul>
+      </div>
+
+      <div class="hero__stage" aria-label="Learning topics orbiting the TechMagpies logo">
+        <div class="orbit" id="orbit">
+          <svg class="orbit__ring" viewBox="0 0 600 600" aria-hidden="true">
+            <defs>
+              <linearGradient id="ringG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18b4ff"/><stop offset="1" stop-color="#1f6ff2"/></linearGradient>
+            </defs>
+            <ellipse cx="300" cy="300" rx="282" ry="196" fill="none" stroke="url(#ringG)" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round" opacity=".7"/>
+            <ellipse cx="300" cy="300" rx="226" ry="150" fill="none" stroke="#1f6ff2" stroke-opacity=".14" stroke-width="1"/>
+          </svg>
+          <div class="orbit__core">
+            <img src="assets/img/techmagpies-logo-transparent.png" alt="TechMagpies" width="320" height="184">
+          </div>
+          <span class="orbit__dot orbit__dot--1" aria-hidden="true"></span>
+          <span class="orbit__dot orbit__dot--2" aria-hidden="true"></span>
+          <span class="orbit__dot orbit__dot--3" aria-hidden="true"></span>
+          <!-- orbiting roadmap chips are placed by home.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRACKS ============ -->
+  <section class="tracks" id="tracks">
+    <div class="container">
+      <div class="tracks__body">
+        <div class="tracks__head">
+          <span class="tracks__eyebrow">Explore our courses</span>
+          <h2>Five courses.<br>One place to start.</h2>
+          <p class="lead lead--dark">Choose a skill to build next. Learn through a clear roadmap, practical challenges and projects designed to take you further.</p>
+          <span class="tracks__note"><span aria-hidden="true"></span>Learn at your own pace</span>
+        </div>
+        <div class="tracks__panel" id="trackPanel" role="region" aria-label="Featured courses">
+          <div class="tracks__viewport" id="trackViewport">
+            <div class="tracks__tabs" role="list" aria-label="Courses" id="trackTabs"></div>
+          </div>
+          <div class="tracks__controls">
+            <div class="tracks__arrows">
+              <button class="tracks__arrow" id="trackPrev" type="button" aria-label="Previous courses" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7"/></svg>
+              </button>
+              <button class="tracks__arrow" id="trackNext" type="button" aria-label="Next courses">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+            <div class="tracks__dots" id="trackDots" role="group" aria-label="Course carousel pages"></div>
+            <span class="sr-only" id="trackStatus" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIVE CLASSES ============ -->
+  <section class="live sec" id="live">
+    <div class="container">
+      <div class="sechead">
+        <h2>Live classes, taught by people who ship.</h2>
+        <p class="lead">Seats are limited so every question gets answered. Join from any device.</p>
+      </div>
+      <div class="board" id="board">
+        <!-- three sessions, dates are computed in home.js so they never go stale -->
+        <article class="slot" data-dow="2" data-hour="19" data-min="0">
+          <div class="slot__date"><b></b><span></span></div>
+          <div class="slot__main"><h3>Frontend Bootcamp</h3><p>Build real-world projects using HTML, CSS and JavaScript.</p></div>
+          <div class="slot__time"><span data-i="clock" data-s="18"></span><em></em></div>
+          <a class="btn btn--primary btn--sm" href="live-class.html">Join session <span data-i="arrow-right" data-s="16"></span></a>
+        </article>
+        <article class="slot" data-dow="4" data-hour="20" data-min="0">
+          <div class="slot__date"><b></b><span></span></div>
+          <div class="slot__main"><h3>Java + DSA</h3><p>Crack tech interviews with structured data structures and algorithms.</p></div>
+          <div class="slot__time"><span data-i="clock" data-s="18"></span><em></em></div>
+          <a class="btn btn--primary btn--sm" href="live-class.html">Join session <span data-i="arrow-right" data-s="16"></span></a>
+        </article>
+        <article class="slot" data-dow="6" data-hour="18" data-min="0">
+          <div class="slot__date"><b></b><span></span></div>
+          <div class="slot__main"><h3>Resume + Placement</h3><p>Build an ATS-friendly resume and learn how referrals really work.</p></div>
+          <div class="slot__time"><span data-i="clock" data-s="18"></span><em></em></div>
+          <a class="btn btn--primary btn--sm" href="live-class.html">Join session <span data-i="arrow-right" data-s="16"></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ COMMUNITY ============ -->
+  <section class="comm sec" id="community">
+    <div class="container">
+      <div class="sechead">
+        <span class="comm__eyebrow">TechMagpies Community</span>
+        <h2>Learn Together. Build Together. Grow Together.</h2>
+        <p class="lead">Share projects, take weekly challenges, find teammates and meet mentors.</p>
+      </div>
+      <ul class="comm__grid">
+        <li><a class="comm__card" href="community.html#projects"><span class="comm__ic" data-i="layers" data-s="22"></span><h3>Project Showcase</h3><p>Explore what other students build.</p></a></li>
+        <li><a class="comm__card comm__card--g" href="community.html#challenge"><span class="comm__ic" data-i="target" data-s="22"></span><h3>Weekly Challenges</h3><p>A new build task every week.</p></a></li>
+        <li><a class="comm__card" href="community.html#teams"><span class="comm__ic" data-i="users" data-s="22"></span><h3>Find Your Team</h3><p>Match on skills and start building.</p></a></li>
+        <li><a class="comm__card comm__card--g" href="community.html#mentors"><span class="comm__ic" data-i="message" data-s="22"></span><h3>Ask a Mentor</h3><p>Live sessions with engineers.</p></a></li>
+        <li><a class="comm__card" href="community.html#achievements"><span class="comm__ic" data-i="award" data-s="22"></span><h3>Achievements</h3><p>Student success stories.</p></a></li>
+      </ul>
+      <a class="btn btn--primary comm__cta" href="community.html">Visit the Community <span data-i="arrow-right" data-s="18"></span></a>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how sec">
+    <div class="container">
+      <div class="sechead sechead--center">
+        <h2>From “where do I start?” to your first offer.</h2>
+        <p class="lead">Three steps. You always know what comes next.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__n">1</span>
+          <span class="step__icon" data-i="compass" data-s="28"></span>
+          <h3>Choose a career path</h3>
+          <p>Select from AI, web development, data science, electronics and more based on what you enjoy.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">2</span>
+          <span class="step__icon" data-i="layers" data-s="28"></span>
+          <h3>Learn step by step</h3>
+          <p>Follow structured levels with lessons, assignments and a project that proves each skill.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">3</span>
+          <span class="step__icon" data-i="rocket" data-s="28"></span>
+          <h3>Become job-ready</h3>
+          <p>Ship a portfolio, get certified, and practise interviews with a mentor before the real ones.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ MENTOR BAND ============ -->
+  <section class="mentor">
+    <div class="container mentor__in">
+      <div>
+        <h2>Stuck on a roadmap? Ask a mentor.</h2>
+        <p>Connect with industry experts for career advice, code reviews and doubt-solving. One request, one reply, usually within a working day.</p>
+      </div>
+      <button class="btn btn--glow" type="button" data-mentor>Book a session <span data-i="arrow-right" data-s="18"></span></button>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="voices sec">
+    <div class="container">
+      <div class="sechead">
+        <h2>What students say after the offer letter.</h2>
+      </div>
+      <div class="voices__grid">
+        <figure class="quote quote--big">
+          <blockquote>The structured courses and hands-on projects helped me land my first job as a software developer. Highly recommend!</blockquote>
+          <figcaption><span class="av av--a">SK</span><span><b>Sarah Kumar</b><em>Software Engineer</em></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>The AI/ML course was comprehensive and practical. The mentorship sessions were invaluable in clearing my doubts.</blockquote>
+          <figcaption><span class="av av--b">RP</span><span><b>Rahul Patel</b><em>Data Scientist</em></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>From beginner to job-ready in six months. The step-by-step approach made learning enjoyable.</blockquote>
+          <figcaption><span class="av av--c">PM</span><span><b>Priya Mehta</b><em>Full Stack Developer</em></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq sec" id="faq">
+    <div class="container faq__grid">
+      <div class="faq__side">
+        <h2>Questions, answered.</h2>
+        <p class="lead">Can’t find yours? Email <a class="u" href="mailto:connect@techmagpies.com">connect@techmagpies.com</a> and a person will reply.</p>
+      </div>
+      <div class="acc" id="acc">
+        <div class="acc__item">
+          <h3><button class="acc__q" aria-expanded="false" aria-controls="a1" id="q1">How do I enroll in a course?<span data-i="plus" data-s="22"></span></button></h3>
+          <div class="acc__a" id="a1" role="region" aria-labelledby="q1"><div><p>Browse the course catalog, open the roadmap you like and press “Start”. You can access the materials immediately.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <h3><button class="acc__q" aria-expanded="false" aria-controls="a2" id="q2">Are the courses self-paced?<span data-i="plus" data-s="22"></span></button></h3>
+          <div class="acc__a" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. Most courses are self-paced, so you can learn around your classes and timetable. Live sessions are optional extras.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <h3><button class="acc__q" aria-expanded="false" aria-controls="a3" id="q3">Will I get a certificate?<span data-i="plus" data-s="22"></span></button></h3>
+          <div class="acc__a" id="a3" role="region" aria-labelledby="q3"><div><p>Yes. You receive a verified certificate after completing the course.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <h3><button class="acc__q" aria-expanded="false" aria-controls="a4" id="q4">Can I learn on my phone?<span data-i="plus" data-s="22"></span></button></h3>
+          <div class="acc__a" id="a4" role="region" aria-labelledby="q4"><div><p>Yes. The whole platform is built to work on phones, tablets and laptops.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <h3><button class="acc__q" aria-expanded="false" aria-controls="a5" id="q5">How does mentorship work?<span data-i="plus" data-s="22"></span></button></h3>
+          <div class="acc__a" id="a5" role="region" aria-labelledby="q5"><div><p>Book a 1:1 session for guidance, doubt-solving and career advice. Send a request and a mentor replies by email to schedule it.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="tm-footer"></div>
+
+<script src="assets/js/courses-data.js"></script>
+<script src="assets/js/featured-courses.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* Text-only contrast overrides for technology roadmap pages. */
+body[data-page="courses"] {
+  color: #e2e8f0;
+}
+
+body[data-page="courses"] h1,
+body[data-page="courses"] h2,
+body[data-page="courses"] h3,
+body[data-page="courses"] h4,
+body[data-page="courses"] .course-title,
+body[data-page="courses"] .stat h3,
+body[data-page="courses"] .project-card h3,
+body[data-page="courses"] .mentor-card h3,
+body[data-page="courses"] .footer-logo-name,
+body[data-page="courses"] .footer-col h4 {
+  color: #fff;
+}
+
+body[data-page="courses"] .hero p,
+body[data-page="courses"] .subtext,
+body[data-page="courses"] .course-sub,
+body[data-page="courses"] .reviews,
+body[data-page="courses"] .enrolled,
+body[data-page="courses"] .list div,
+body[data-page="courses"] .pro-box ul,
+body[data-page="courses"] .old,
+body[data-page="courses"] .projects-section .sub,
+body[data-page="courses"] .mentor-section .sub,
+body[data-page="courses"] .project-card p,
+body[data-page="courses"] .mentor-card p,
+body[data-page="courses"] .footer-col p,
+body[data-page="courses"] .footer-col ul li a,
+body[data-page="courses"] .contact-item,
+body[data-page="courses"] .footer-bottom,
+body[data-page="courses"] .foot__brand p,
+body[data-page="courses"] .foot li,
+body[data-page="courses"] .foot__bottom {
+  color: #cbd5e1;
+}
+
+body[data-page="courses"] .price {
+  color: #19bfff;
+}
+
+body[data-page="courses"] .btn,
+body[data-page="courses"] .course-btn,
+body[data-page="courses"] .pro-box button,
+body[data-page="courses"] .mentor-card button,
+body[data-page="courses"] .level-badge {
+  color: #fff;
+}
+
+body[data-page="courses"] .nav-left,
+body[data-page="courses"] .menu-toggle,
+body[data-page="courses"] .nav-center a:hover,
+body[data-page="courses"] .nav--dark .nav__links a:hover {
+  color: #fff;
+}
+
+body[data-page="courses"] .nav-center a,
+body[data-page="courses"] #userName,
+body[data-page="courses"] .nav--dark .nav__links a,
+body[data-page="courses"] .nav--dark .nav__links a.is-active,
+body[data-page="courses"] .nav__sheet,
+body[data-page="courses"] .nav__sheet nav a {
+  color: #cbd5e1;
+}
+
+body[data-page="courses"] .nav-left svg,
+body[data-page="courses"] .footer-logo-wrap svg,
+body[data-page="courses"] .contact-item svg,
+body[data-page="courses"] .icon,
+body[data-page="courses"] .project-tag,
+body[data-page="courses"] .nav__sheet nav a.is-active,
+body[data-page="courses"] .nav__sheet nav a:hover,
+body[data-page="courses"] .nav__sheetmail,
+body[data-page="courses"] .footer-col ul li a:hover,
+body[data-page="courses"] .foot li a:hover,
+body[data-page="courses"] .foot__mail:hover {
+  color: #19bfff;
+}
+
+body[data-page="courses"] .hero .tag {
+  color: #19bfff;
+}
+
+body[data-page="courses"] .badge.cert {
+  color: #e2e8f0;
+}
+
+body[data-page="courses"] .hero h1,
+body[data-page="courses"] .projects-section h2,
+body[data-page="courses"] .mentor-section h2 {
+  -webkit-text-fill-color: #fff;
+}
+
+body[data-page="courses"] .project-card::before,
+body[data-page="courses"] .mentor-card::before {
+  pointer-events: none;
+}
+
+body[data-page="courses"] .foot__mail,
+body[data-page="courses"] .foot h4 {
+  color: #fff;
+}
+
+body[data-page="courses"] .foot__social a {
+  color: #cbd5e1;
+}
+
+body[data-page="courses"] .foot__social a:hover {
+  color: #fff;
+}
